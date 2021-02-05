@@ -13,14 +13,14 @@ Para cada grand slam los endpoints son:
   /winner/us-open\
   /winner/australian-open\
   /winner/wimbledon\
-  /winner/roland-garros\
+  /winner/roland-garros
 
 Para obtener la última vez que lo ganó el jugador, se realiza un POST con el body {player: "Nombre"} (ej. {player: "Novak Djokovic"}). Los endpoints son:
 
   /winner/us-open/date\
   /winner/australian-open/date\
   /winner/wimbledon/date\
-  /winner/roland-garros/date\
+  /winner/roland-garros/date
 
 
 ### Consignas y Tips
