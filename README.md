@@ -9,18 +9,18 @@ Usando los siguientes endpoints, te pedimos que nos digas de cada [Grand Slam](<
 
 Usando el comando ./run-dev.sh la api va a empezar a correr localmente en http://localhost:4000
 Para cada grand slam los endpoints son:
-\n
-  /winner/us-open\n
-  /winner/australian-open\n
-  /winner/wimbledon\n
-  /winner/roland-garros\n
+
+  /winner/us-open\
+  /winner/australian-open
+  /winner/wimbledon
+  /winner/roland-garros
 
 Para obtener la última vez que lo ganó el jugador, se realiza un POST con el body {player: "Nombre"} (ej. {player: "Novak Djokovic"}). Los endpoints son:
-\n
-  /winner/us-open/date\n
-  /winner/australian-open/date\n
-  /winner/wimbledon/date\n
-  /winner/roland-garros/date\n
+
+  /winner/us-open/date
+  /winner/australian-open/date
+  /winner/wimbledon/date
+  /winner/roland-garros/date
 
 
 ### Consignas y Tips
