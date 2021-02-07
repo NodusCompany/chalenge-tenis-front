@@ -2,10 +2,11 @@
 
 # Instrucciones
 ---
-![Logo Docker](assets/docker.png)
+## Docker compose
 
 Se puede levantar el front y back con **Docker**, con el siguiente comando:
 
+![Logo Docker](assets/docker.png)
 ```
   docker-compose -f docker-compose.yml up
 ```
@@ -34,7 +35,9 @@ http://localhost/
 
 ## Backend
 
-![Logo Nodejs](assets/nodejs.webp)
+Corriendo el back con NodeJS
+
+![Logo Nodejs](assets/nodejs.png)
 
 ```
   cd back
@@ -59,9 +62,10 @@ Para obtener la última vez que lo ganó el jugador, se realiza un GET con el pa
   /winner/roland-garros/date/Rafael%20Nadal
 ```
 ## Frontend
-![Logo ReactJS](assets/reactjs.png)
 
 Arrancamos el proyecto frontend una vez que tengamos el backend corriendo de la siguiente forma:
+
+![Logo ReactJS](assets/reactjs.png)
 
 ```
   cd front
