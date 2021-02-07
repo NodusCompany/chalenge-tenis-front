@@ -2,8 +2,9 @@
 
 # Instrucciones
 ---
-Se puede levantar el front y back con **Docker**, con el siguiente comando:
 ![Logo Docker](assets/docker.png)
+
+Se puede levantar el front y back con **Docker**, con el siguiente comando:
 
 ```
   docker-compose -f docker-compose.yml up
