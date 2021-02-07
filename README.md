@@ -33,3 +33,20 @@ Para obtener la última vez que lo ganó el jugador, se realiza un POST con el b
 ### El extra mile
 
 Si se te ocurre alguna otra cosa para agregarle al challenge, queres hacerla y mostrarnos nos ayudarías a mejorar este ejercicio.
+
+
+## Para correr el Front
+``
+  cd front
+  npm install
+  npm start
+``
+El front corre con React JS creado con create-react-app.
+### Comentarios
+
+Ranking sorteado por cantidad
+Fechas ordenadas de menor a mayor
+El método del server para obtener la fecha se cambió a GET
+Se cachea llamado de fecha cuando se hace clic en tenista
+En SpreadsheetService.js getWinner devuelve (count) la cantidad de torneos ganados en general
+- En SpreadsheetService.js hace dos loops seguidos 'for (const item in winners)', con uno alcanzaba (pedir que corrija en vivo)

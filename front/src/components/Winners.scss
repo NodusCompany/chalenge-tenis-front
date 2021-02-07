@@ -1,0 +1,34 @@
+@import '../sass/vars';
+
+.winners {
+	padding: 1rem;
+
+	.winners-container {
+		display: flex;
+		flex-direction: row;
+
+		@media all and (max-width: $mobileWidth) {
+			flex-direction: column;
+		}
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+
+		li {
+			margin: 1rem 0;
+
+			&.active a {
+				font-weight: bold;
+				text-decoration: underline;
+			}
+		}
+
+		a {
+			color: $orange;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}

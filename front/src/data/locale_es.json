@@ -1,0 +1,113 @@
+{
+	"head": {
+		"lang": "es",
+		"title": "Grand Slam Winners Challange",
+		"description": "",
+		"keywords": "",
+
+		"apple_mobile_web_app_title": "",
+
+		"theme": {
+			"color": "#100217"
+		},
+
+		"facebook": {
+			"app_id": "",
+			"title": "",
+			"description": "",
+			"image": "assets/images/share_img_fb.png"
+		},
+
+		"twitter": {
+			"title": "",
+			"description": "",
+			"image": "assets/images/share_img_tw.png"
+		}
+
+	},
+
+	"header": {
+		"title": "Grand Slam",
+		"logo": "assets/logo.jpg",
+		"mobile_menu": {
+			"caption": "Abrir Menú",
+			"icon": "/assets/iconos/bars-solid.svg",
+			"close": "/assets/iconos/close.svg",
+			"close_caption": "Cerrar Menú"
+		},
+		"toolbar": [
+			{
+				"label": "Buscar",
+				"class": "desktop-only",
+				"mobile_class": "",
+				"icon": "/assets/iconos/search-solid.svg"
+			},
+			{
+				"label": "Mi cuenta",
+				"class": "desktop-only",
+				"mobile_class": "",
+				"icon": "/assets/iconos/user-solid.svg"
+			},
+			{
+				"label": "Carrito",
+				"class": "",
+				"mobile_class": "hidden",
+				"icon": "/assets/iconos/shopping-cart-solid.svg"
+			}
+		]
+	},
+
+	"navigation": [
+		{
+			"label": "Winners",
+			"url": "/",
+			"class": "active"
+		},
+		{
+			"label": "Australian Open",
+			"url": "https://ausopen.com/",
+			"target": "_blank"
+		},
+		{
+			"label": "Roland Garros",
+			"url": "https://www.rolandgarros.com/en-us/",
+			"target": "_blank"
+		},
+		{
+			"label": "Wimbledon",
+			"url": "https://www.wimbledon.com/",
+			"target": "_blank"
+		},
+		{
+			"label": "US Open",
+			"url": "https://www.usopen.org/index.html",
+			"target": "_blank"
+		}
+	],
+
+	"footer": {
+		"links": [
+			{
+				"label": "Grand Slam Wiki",
+				"url": "https://en.wikipedia.org/wiki/Grand_Slam_(tennis)"
+			},
+			{
+				"label": "Latest news",
+				"url": "https://www.atptour.com/"
+			}
+		]
+	},
+
+	"winners": {
+		"title": "Top Grand Slam winners",
+		"selector": {
+			"text": "Top winners",
+			"note": "(click to view their latest win dates)"
+
+		}
+	},
+
+	"bio": {
+		"winsTitle": "Last player wins by tournaments (by date)"
+	}
+}

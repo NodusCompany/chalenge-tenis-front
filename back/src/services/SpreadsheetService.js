@@ -48,7 +48,8 @@ const getWinner = async (tournament) => {
     }
 
     return {
-      name: mostWins
+      name: mostWins,
+      count: numberofWins
     };
   } catch (error) {
     console.log(error);

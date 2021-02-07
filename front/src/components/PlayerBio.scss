@@ -1,0 +1,16 @@
+@import '../sass/vars';
+
+.player-bio {
+	ul {
+		color: $white;
+		li {
+			padding: 1rem;
+		}
+		li:nth-child(even) {
+			background-color: $green;
+		}
+		li:nth-child(odd) {
+			background-color: $darkgreen;
+		}
+	}
+}
