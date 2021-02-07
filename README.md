@@ -45,8 +45,13 @@ El front corre con React JS creado con create-react-app, corre en el puerto 3000
 ### Comentarios
 
 Ranking sorteado por cantidad
+
 Fechas ordenadas de menor a mayor
+
 El método del server para obtener la fecha se cambió a GET
+
 Se cachea llamado de fecha cuando se hace clic en tenista
+
 En SpreadsheetService.js getWinner devuelve (count) la cantidad de torneos ganados en general
+
 - En SpreadsheetService.js hace dos loops seguidos 'for (const item in winners)', con uno alcanzaba (pedir que corrija en vivo)
