@@ -2,15 +2,15 @@
 
 .player-bio {
 	ul {
-		color: $white;
+		color: $black;
 		li {
 			padding: 1rem;
 		}
 		li:nth-child(even) {
-			background-color: $green;
+			background-color: transparentize($orange, .5);
 		}
 		li:nth-child(odd) {
-			background-color: $darkgreen;
+			background-color: transparentize($yellow, .5);
 		}
 	}
 }

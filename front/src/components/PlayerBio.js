@@ -61,9 +61,10 @@ class PlayerBio extends React.Component {
 	render () {
 		return(
 			<div className="player-bio">
-				<p>{Data.bio.winsTitle}</p>
+				<p><em>{Data.bio.winsTitle}</em></p>
 				<ul className="flex-column">
 				{
+					// if there is winDates and 4 tournaments were loaded
 					this.state.winDates[this.props.player] && this.state.winDates[this.props.player].length === TOURNAMENTS.length ?
 					this.state.winDates[this.props.player].sort((a, b) => a.numericDate - b.numericDate).map((item, index) => {
 						const results = Object.entries(item)[0]

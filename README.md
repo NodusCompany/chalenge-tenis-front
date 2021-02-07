@@ -36,12 +36,12 @@ Si se te ocurre alguna otra cosa para agregarle al challenge, queres hacerla y m
 
 
 ## Para correr el Front
-``
+```
   cd front
   npm install
   npm start
-``
-El front corre con React JS creado con create-react-app.
+```
+El front corre con React JS creado con create-react-app, corre en el puerto 3000
 ### Comentarios
 
 Ranking sorteado por cantidad

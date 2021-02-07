@@ -4,7 +4,7 @@ import './Loading.scss';
 
 function Loading() {
 	return(
-		<div className="snippet" data-title=".dot-pulse">
+		<div className="snippet flex-row flex-center">
 			<div className="stage">
 				<div className="dot-pulse"></div>
 			</div>

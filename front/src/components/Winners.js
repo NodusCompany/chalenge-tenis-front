@@ -56,7 +56,7 @@ class Winners extends React.Component {
 				<div className="winners-container">
 					<div className="flex-grow">
 						<div>
-							<p>{Data.winners.selector.text}, {Data.winners.selector.note}</p>
+							<p><em>{Data.winners.selector.text}, {Data.winners.selector.note}</em></p>
 						</div>
 						{(this.state.completed) ? 
 							(
