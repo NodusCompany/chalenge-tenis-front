@@ -54,4 +54,4 @@ Se cachea llamado de fecha cuando se hace clic en tenista
 
 En SpreadsheetService.js getWinner devuelve (count) la cantidad de torneos ganados en general
 
-- En SpreadsheetService.js hace dos loops seguidos 'for (const item in winners)', con uno alcanzaba (pedir que corrija en vivo)
+En SpreadsheetService.js se simplificó los dos loops en uno
