@@ -1,35 +1,81 @@
+
+
 # Instrucciones
+---
+## Docker compose
 
-Sobre la carpeta del proyecto (challenge-node-tenis)
-`run-dev.sh`
+Se puede levantar el front y back con **Docker**, con el siguiente comando:
 
-# Challenge torneos tenis
+![Logo Docker](assets/docker.png)
+```
+  docker-compose -f docker-compose.yml up
+```
+Luego entrar en (nota: usamos puerto 80):
+```
+http://localhost/
+```
+### Comentarios
 
-Usando los siguientes endpoints, te pedimos que nos digas de cada [Grand Slam](<https://es.wikipedia.org/wiki/Grand_Slam_(tenis)>), quién es el jugador que mas veces lo ganó y cuando haces un click sobre el jugador te diga cuando fue la ultima vez que lo ganó.
+- Ranking sorteado por cantidad de grand slams ganados
 
-Usando el comando ./run-dev.sh la api va a empezar a correr localmente en http://localhost:4000
+- Fechas ordenadas de menor a mayor
+
+- El método del server para obtener la fecha se cambió a GET
+
+- Se cachea llamado de fecha cuando se hace clic en tenista
+
+- En SpreadsheetService.js getWinner devuelve (count) la cantidad de torneos ganados en general
+
+- En SpreadsheetService.js se simplificó los dos loops en uno
+
+
+
+# Correr sin DOCKER
+---
+
+## Backend
+
+Corriendo el back con NodeJS
+
+![Logo Nodejs](assets/nodejs.png)
+
+```
+  cd back
+  npm install
+  npm dev
+```
+
 Para cada grand slam los endpoints son:
-
+```
   /winner/us-open\
   /winner/australian-open\
   /winner/wimbledon\
   /winner/roland-garros
+  
+  ```
 
-Para obtener la última vez que lo ganó el jugador, se realiza un POST con el body {player: "Nombre"} (ej. {player: "Novak Djokovic"}). Los endpoints son:
+Para obtener la última vez que lo ganó el jugador, se realiza un GET con el param el nombre del jugador. Los endpoints son:
+```
+  /winner/us-open/date/Rafael%20Nadal
+  /winner/australian-open/date/Rafael%20Nadal
+  /winner/wimbledon/date/Rafael%20Nadal
+  /winner/roland-garros/date/Rafael%20Nadal
+```
+## Frontend
 
-  /winner/us-open/date\
-  /winner/australian-open/date\
-  /winner/wimbledon/date\
-  /winner/roland-garros/date
+Arrancamos el proyecto frontend una vez que tengamos el backend corriendo de la siguiente forma:
+
+![Logo ReactJS](assets/reactjs.png)
+
+```
+  cd front
+  npm install
+  npm start
+```
 
 
-### Consignas y Tips
+Luego entramos al front de ReactJS en la siguiente URI:
 
-- La resolución debe ser un fork de este repo (Se evalúa el uso de GIT).
-- El frontend puede ser tanto en React como en vanilla js.
-- El diseño y usabilidad quedan a tu criterio.
-- Suma que el sitio tenga buena performance!
-
-### El extra mile
-
-Si se te ocurre alguna otra cosa para agregarle al challenge, queres hacerla y mostrarnos nos ayudarías a mejorar este ejercicio.
+```
+http://localhost:3000
+```

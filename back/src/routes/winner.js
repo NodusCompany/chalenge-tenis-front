@@ -6,6 +6,6 @@ const {
 } = require('./../controllers/spreadsheetController');
 
 router.get('/:tournament', getWinnerController);
-router.post('/:tournament/date', getLastDateWon);
+router.get('/:tournament/date/:player', getLastDateWon);
 
 module.exports = router;

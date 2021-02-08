@@ -39,16 +39,13 @@ const getWinner = async (tournament) => {
       if (winners[item] >= numberofWins) {
         numberofWins = winners[item];
       }
-    }
 
-    for (const item in winners) {
-      if (winners[item] === numberofWins) {
-        mostWins.push(item);
-      }
+      mostWins[winners[item]] ? mostWins[winners[item]].push(item) : mostWins[winners[item]] = [item];
     }
 
     return {
-      name: mostWins
+      name: mostWins[numberofWins],
+      count: numberofWins
     };
   } catch (error) {
     console.log(error);

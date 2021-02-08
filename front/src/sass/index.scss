@@ -1,0 +1,69 @@
+@import './vars';
+
+// https://sass-lang.com/documentation/at-rules/import#importing-css
+@import '../../node_modules/normalize.css/normalize';
+//@import './partials/fonts';
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: $white;
+}
+
+body {
+  position: relative;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
+  //overscroll-behavior: none;
+}
+
+html {
+  font-size: 10px;
+  color: $black;
+
+  // Box-sizing reset. Best for responsive and sizing in general! The old one is content-box.
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  // helper class in case of 
+  &.no-scroll {
+    overflow: hidden;
+
+    body {
+      overflow: hidden;
+    }
+  }
+}
+
+.grand-slam {
+  transition: transform $transition-fast;
+
+  * {
+    font-family: sans-serif;
+    font-size: 1.6rem;
+  }
+
+  // common styles (works with normalize), general styles
+  @import './partials/common';
+
+
+  // low-priority styles, here we put debug css, mobile console styles, etc
+  @import './partials/debug';
+
+  // Accessibility styles
+  @import './partials/accessibility';
+
+  // general components
+  @import './partials/images';
+  @import './partials/typography';
+
+}

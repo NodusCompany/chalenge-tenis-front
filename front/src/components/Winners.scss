@@ -1,0 +1,41 @@
+@import '../sass/vars';
+
+.winners {
+	padding: 1rem;
+
+	.winners-container {
+		display: flex;
+		flex-direction: row;
+
+		@media all and (max-width: $mobileWidth) {
+			flex-direction: column;
+		}
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+
+		@media all and (max-width: $mobileWidth) {
+			align-items: center;
+		}
+
+		li {
+			margin: 1rem 0;
+
+			&.active a {
+				font-weight: bold;
+				box-shadow: 8px 8px 0px -4px $orange;
+			}
+		}
+
+		a {
+			color: $orange;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 0.5rem;
+			padding-left: 0;
+			transition: box-shadow 0.25s ease;
+		}
+	}
+}

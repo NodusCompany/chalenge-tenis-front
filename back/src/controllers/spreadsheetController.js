@@ -12,8 +12,8 @@ const getWinnerController = async (req, res) => {
 
 const getLastDateWon = async (req, res) => {
   try {
-    const { tournament } = req.params;
-    const { player } = req.body;
+    const { tournament, player } = req.params;
+    const {  } = req.body;
     const date = await getLastDate(player, tournament);
     res.send(date);
   } catch (error) {
