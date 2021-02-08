@@ -1,4 +1,0 @@
-- El método para obtener la fecha // router.post('/:tournament/date', getLastDateWon); // debería ser un GET y no un POST
-- Hace un llamado por cada vez que clickeas en un tenista (con hacerlo una vez alcanzaría)
-- En SpreadsheetService.js hace dos loops seguidos 'for (const item in winners)', con uno alcanzaba (pedir que corrija en vivo)
-- Faltaría la parte de logs (o no lo encontré ?)
