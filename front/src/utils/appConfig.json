@@ -1,0 +1,42 @@
+{
+  "title": "Nodus Grand Slam",
+  "navBar": {
+    "sections": [
+      {
+        "id": "results",
+        "title": "RESULTADOS",
+        "sectionId": "",
+        "items": []
+      },
+      {
+        "id": "statistics",
+        "title": "ESTADISTICAS",
+        "sectionId": "",
+        "items": []
+      },
+      {
+        "id": "rankings",
+        "title": "RANKINGS",
+        "sectionId": "",
+        "items": []
+      },
+      {
+        "id": "players",
+        "title": "JUGADORES",
+        "sectionId": "",
+        "items": []
+      },
+      {
+        "id": "grandslam",
+        "title": "GRAND SLAM",
+        "sectionId": "grandslam",
+        "items": [
+          "US OPEN",
+          "AUSTRALIAN OPEN",
+          "WIMBLEDON",
+          "ROLAND GARROS"
+        ]
+      }
+    ]
+  }
+}
