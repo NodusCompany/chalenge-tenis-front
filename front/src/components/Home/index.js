@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Box, Paper, Container
+  Box, Paper
 } from '@material-ui/core'
 
 import Header from '../Header'
@@ -17,9 +17,7 @@ const Home = () => {
       <Paper className={classes.root}>
         <Header />
       </Paper>
-      <Container>
-        <Section />
-      </Container>
+      <Section />
     </Box>
   )
 }

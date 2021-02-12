@@ -1,29 +1,11 @@
 {
   "title": "Nodus Grand Slam",
   "navBar": {
-    "sections": [
+    "items": [
       {
-        "id": "grandslam",
+        "id": "grandSlam",
         "title": "GRAND SLAM",
-        "sectionId": "grandslam",
-        "items": [
-          {
-            "id": "usOpen",
-            "title": "US OPEN"
-          },
-          {
-            "id": "australianOpen",
-            "title": "AUSTRALIAN OPEN"
-          },
-          {
-            "id": "wimbledon",
-            "title": "WIMBLEDON"
-          },
-          {
-            "id": "rolandGarros",
-            "title": "ROLAND GARROS"
-          }
-        ]
+        "description": "El Grand Slam de tenis está constituido por los cuatro torneos mayores del circuito internacional organizados por la Federación Internacional de Tenis."
       }
     ]
   }

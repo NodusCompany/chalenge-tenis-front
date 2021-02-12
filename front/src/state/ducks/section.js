@@ -7,9 +7,9 @@ const section = createSlice({
     section: {}
   },
   reducers: {
-    sectionSelected: (draftState, { payload: { id, idItem } }) => {
+    sectionSelected: (draftState, { payload: { id } }) => {
       draftState.sectionOpen = true
-      draftState.section = { id, idItem }
+      draftState.section = { id }
     }
   }
 })

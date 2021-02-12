@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
-import Section from './Section'
+import NavItem from './NavItem'
 import { getTitle, getItemsNavBar } from '../../utils/configQueries'
 import useStyles from './styles'
 
@@ -13,7 +13,7 @@ const Home = () => {
   const classes = useStyles()
 
   const title = getTitle()
-  const Sections = getItemsNavBar()
+  const Items = getItemsNavBar()
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -27,13 +27,13 @@ const Home = () => {
       </Toolbar>
       <Tabs className={classes.tabs}>
         {
-          Sections.map(({
-            id, title: t, items
+          Items.map(({
+            id, title: t, description
           }) => (
-            <Section
+            <NavItem
               id={id}
               title={t}
-              items={items}
+              description={description}
             />
           ))
         }
