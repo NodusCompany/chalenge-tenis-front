@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
+import PropTypes from 'prop-types'
+
 import {
   Menu, MenuItem, Button, Box
 } from '@material-ui/core'
 
-import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
+import { actions as sectionActions } from '../../state/ducks/section'
 
 import useStyles from './styles'
 
@@ -12,18 +15,21 @@ const Section = ({
   id, title, items
 }) => {
   const classes = useStyles()
+  const dispatch = useDispatch()
+
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleClose = () => {
+  const handleClose = (idItem) => {
+    dispatch(sectionActions.sectionSelected({ id, idItem }))
     setAnchorEl(null)
   }
 
   return (
-    <Box key={id}>
+    <Box>
       <Button aria-controls="simple-menu" aria-haspopup="true" className={classes.button} onClick={handleClick}>
         {title}
       </Button>
@@ -32,11 +38,10 @@ const Section = ({
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
-        onClose={handleClose}
       >
         {
-          items.map((i) => (
-            <MenuItem onClick={handleClose}>{i}</MenuItem>
+          items.map(({ id: idItem, title: titleItem }) => (
+            <MenuItem key={idItem} onClick={() => handleClose(idItem)}>{titleItem}</MenuItem>
           ))
         }
       </Menu>

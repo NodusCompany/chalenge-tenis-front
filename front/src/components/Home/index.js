@@ -1,8 +1,11 @@
 import React from 'react'
 
-import { Paper } from '@material-ui/core'
+import {
+  Box, Paper, Container
+} from '@material-ui/core'
 
 import Header from '../Header'
+import Section from '../Section'
 
 import useStyles from './styles'
 
@@ -10,9 +13,14 @@ const Home = () => {
   const classes = useStyles()
 
   return (
-    <Paper className={classes.root}>
-      <Header />
-    </Paper>
+    <Box>
+      <Paper className={classes.root}>
+        <Header />
+      </Paper>
+      <Container>
+        <Section />
+      </Container>
+    </Box>
   )
 }
 
