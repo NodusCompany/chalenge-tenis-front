@@ -1,8 +1,10 @@
 import React from 'react'
 
 import { useSelector } from 'react-redux'
-import BuildSection from './BuildSection'
-import GrandSlam from './GrandSlam'
+import Main from '../Main/Main'
+
+import Container from './Container'
+import GrandSlam from '../GrandSlam/GrandSlam'
 
 const Section = () => {
   const isShow = useSelector((state) => state.section.sectionOpen)
@@ -10,21 +12,16 @@ const Section = () => {
 
   const sectionComponents = new Map([
     // TODO: Al escalar la applicación se deben agregar acá los nuevos componentes
+    ['main', Main],
     ['grandSlam', GrandSlam]
   ])
 
   const Selected = isShow && sectionComponents.get(id)
 
   return (
-    <>
-      {
-        !isShow && (
-          // TODO: Eliminar componente al finalizar la applicación
-          <BuildSection />
-        )
-      }
+    <Container>
       {Selected && <Selected />}
-    </>
+    </Container>
   )
 }
 

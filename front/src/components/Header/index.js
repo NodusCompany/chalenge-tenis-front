@@ -1,19 +1,30 @@
 import React from 'react'
 
 import {
-  AppBar, Toolbar, IconButton, Typography, Tabs
+  AppBar, Toolbar, IconButton, Typography, Tabs, Tab
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
-import NavItem from './NavItem'
+import { useDispatch } from 'react-redux'
+import { actions as sectionActions } from '../../state/ducks/section'
+
 import { getTitle, getItemsNavBar } from '../../utils/configQueries'
 import useStyles from './styles'
 
 const Home = () => {
   const classes = useStyles()
-
   const title = getTitle()
   const Items = getItemsNavBar()
+
+  const [value, setValue] = React.useState(0)
+  const dispatch = useDispatch()
+
+  const handleClick = (id) => {
+    dispatch(sectionActions.sectionSelected({ id }))
+  }
+  const handleChange = (_, newValue) => {
+    setValue(newValue)
+  }
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -25,15 +36,15 @@ const Home = () => {
           {title}
         </Typography>
       </Toolbar>
-      <Tabs className={classes.tabs}>
+      <Tabs value={value} className={classes.tabs} onChange={handleChange}>
         {
           Items.map(({
-            id, title: t, description
+            id, title: t
           }) => (
-            <NavItem
-              id={id}
-              title={t}
-              description={description}
+            <Tab
+              key={id}
+              label={t}
+              onClick={() => handleClick(id)}
             />
           ))
         }

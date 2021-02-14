@@ -1,12 +1,53 @@
 {
-  "title": "Nodus Grand Slam",
+  "title": "Nodus Tenis",
+  "api": {
+    "grandSlam": "http://localhost:4000"
+  },
   "navBar": {
     "items": [
+      {
+        "id": "main",
+        "title": "INICIO"
+      },
       {
         "id": "grandSlam",
         "title": "GRAND SLAM",
         "description": "El Grand Slam de tenis está constituido por los cuatro torneos mayores del circuito internacional organizados por la Federación Internacional de Tenis."
       }
     ]
-  }
+  },
+  "tournaments": [
+    {
+      "id": "us-open",
+      "title": "US OPEN",
+      "oficialName": "US Open",
+      "place": "Nueva York, Estados Unidos",
+      "sup": "Dura",
+      "lastChampion": "Dominic Thiem"
+    },
+    {
+      "id": "australian-open",
+      "title": "AUSTRALIAN OPEN",
+      "oficialName": "Australian Open",
+      "place": "Melbourne, Australia",
+      "sup": "Dura",
+      "lastChampion": "Novak Djokovic"
+    },
+    {
+      "id": "wimbledon",
+      "title": "WIMBLEDON",
+      "oficialName": "The Championships - Wimbledon",
+      "place": "Londres, Reino Unido",
+      "sup": "Césped",
+      "lastChampion": "Novak Djokovic"
+    },
+    {
+      "id": "roland-garros",
+      "title": "ROLAND GARROS",
+      "oficialName": "Les internationaux de France de Roland Garros",
+      "place": "París, Francia",
+      "sup": "Tierra Batida",
+      "lastChampion": "Rafael Nadal"
+    }
+  ]
 }

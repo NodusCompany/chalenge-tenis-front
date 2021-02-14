@@ -6,11 +6,11 @@ import {
 
 import useStyles from './styles'
 
-const BuildSection = () => {
+const Main = () => {
   const classes = useStyles()
 
   return (
-    <Container className={classes.buildSection}>
+    <Container className={classes.main}>
       <Typography>
         SECCIÓN EN CONSTRUCCIÓN
       </Typography>
@@ -18,4 +18,4 @@ const BuildSection = () => {
   )
 }
 
-export default BuildSection
+export default Main
