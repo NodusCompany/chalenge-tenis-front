@@ -1,15 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { getLastWinner } from '../../utils/apiConfig'
+import { getLastWinner, getLastTimeWon } from '../../utils/apiConfig'
 import { getTournaments } from '../../utils/configQueries'
-
-const getGrandSlamWinner = createAsyncThunk(
-  'statistics/getGrandSlamWinner',
-  async () => {
-    const winner = 'Nadal'
-    return winner
-  }
-)
 
 const getWinner = createAsyncThunk(
   'statistics/getWinner',
@@ -32,7 +24,7 @@ const getWinner = createAsyncThunk(
       place,
       sup,
       lastChampion,
-      maxWinner: name.map((n) => n)
+      maxWinner: name.map((n) => `${n} `)
     }
     return { data }
   }
@@ -57,20 +49,48 @@ const getData = createAsyncThunk(
   }
 )
 
+const playerDataRequest = createAsyncThunk(
+  'statistics/playerDataRequest',
+  async ({ tournament, player }) => {
+    const url = getLastTimeWon({ tournament })
+
+    const resp = await fetch(url, {
+      method: 'POST',
+      body: { player }
+    })
+
+    const { lastDayWon, lastMonthWon, lastYearWon } = await resp.json()
+
+    const data = {
+      id: player,
+      name: player,
+      tournament,
+      lastWon: `${lastDayWon}/${lastMonthWon}/${lastYearWon}`
+    }
+    return { data }
+  }
+)
+
 const statistics = createSlice({
   name: 'statistics',
   initialState: {
-    data: []
+    data: [],
+    player: false
   },
   reducers: {},
   extraReducers: {
     [getWinner.fulfilled]: (draftState, { payload: { data } }) => {
+      // TODO: evitar info repetida
       draftState.data.push(data)
+    },
+    [playerDataRequest.fulfilled]: (draftState, { payload: { data } }) => {
+      // TODO: evitar info repetida
+      draftState.player = data
     }
   }
 })
 
 export default statistics.reducer
 
-const actions = { ...statistics.actions, getGrandSlamWinner, getData }
+const actions = { ...statistics.actions, getData, playerDataRequest }
 export { actions }

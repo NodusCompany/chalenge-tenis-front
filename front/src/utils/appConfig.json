@@ -1,6 +1,6 @@
 {
   "title": "Nodus Tenis",
-  "api": {
+  "endpoints": {
     "grandSlam": "http://localhost:4000"
   },
   "navBar": {

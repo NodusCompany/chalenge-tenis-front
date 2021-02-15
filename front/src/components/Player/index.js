@@ -6,16 +6,16 @@ import {
 
 import useStyles from './styles'
 
-const Main = () => {
+const Player = () => {
   const classes = useStyles()
 
   return (
     <Container className={classes.main}>
-      <Typography variant="body1" className={classes.body1}>
-        SECCIÓN EN CONSTRUCCIÓN
+      <Typography>
+        JUGADOR
       </Typography>
     </Container>
   )
 }
 
-export default Main
+export default Player

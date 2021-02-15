@@ -1,6 +1,6 @@
 import appConfig from './appConfig.json'
 
-const getApiUrl = () => appConfig.api.grandSlam
+const getApiUrl = () => appConfig.endpoints.grandSlam
 
 const getTitle = () => appConfig.title
 

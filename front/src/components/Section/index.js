@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Main from '../Main/Main'
 
 import Container from './Container'
-import GrandSlam from '../GrandSlam/GrandSlam'
+import GrandSlam from '../GrandSlam'
 
 const Section = () => {
   const isShow = useSelector((state) => state.section.sectionOpen)

@@ -2,9 +2,12 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles((theme) => ({
   main: {
-    border: '1px solid black',
-    marginTop: theme.spacing(5),
-    width: theme.spacing(50),
-    height: theme.spacing(50)
+    marginTop: theme.spacing(6),
+    height: theme.spacing(25),
+    width: '100%',
+    border: '1px solid grey',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }))

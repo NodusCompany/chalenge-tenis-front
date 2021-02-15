@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
-  Paper, Table, TableBody,
+  Paper, Table, TableBody, Link,
   TableCell, TableContainer, TableHead, TableRow
 } from '@material-ui/core'
 
@@ -11,7 +11,6 @@ import { actions as statisticsActions } from '../../state/ducks/statistics'
 
 import useStyles from '../Section/styles'
 
-// TODO: El componente no debería conocer los ids
 const columns = [
   {
     id: 'title',
@@ -44,7 +43,7 @@ const GrandSlam = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(statisticsActions.getData())
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const data = useSelector((state) => state.statistics.data)
@@ -67,9 +66,27 @@ const GrandSlam = () => {
           {data.map((row) => (
             <TableRow key={row.id}>
               {
-                Object.keys(row).filter((k) => k !== 'id').map((key) => (
-                  <TableCell key={row[key]} align="center">
-                    {row[key]}
+                Object.keys(row).filter((k) => k !== 'id').map((item, index) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <TableCell key={index} align="center">
+                    {
+                      item !== 'maxWinner' ? row[item] : (
+                        row[item].map((player) => (
+                          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                          <Link
+                            key={player}
+                            href="#"
+                            onClick={() => (
+                              dispatch(statisticsActions.playerDataRequest({
+                                tournament: row.id, player
+                              }))
+                            )}
+                          >
+                            {player}
+                          </Link>
+                        ))
+                      )
+                    }
                   </TableCell>
                 ))
               }
