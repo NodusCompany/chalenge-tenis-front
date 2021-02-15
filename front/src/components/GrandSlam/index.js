@@ -14,7 +14,7 @@ const GrandSlam = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // TODO: Mejorar formato del player en el state
+  // TODO: Mejorar formato de player en el state
   const {
     showPlayer,
     data: {
