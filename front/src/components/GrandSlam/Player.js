@@ -11,7 +11,7 @@ import {
 
 import { actions as statisticsActions } from '../../state/ducks/statistics'
 
-const Player = ({ name, tournament, lastWon }) => {
+const Player = ({ name, nameTournament, lastWon }) => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(statisticsActions.getData())
@@ -25,7 +25,7 @@ const Player = ({ name, tournament, lastWon }) => {
           <KeyboardBackspaceIcon />
         </IconButton>
         <Typography>
-          {`${name} ganó por última ves el ${tournament} el ${lastWon}`}
+          {`${name} ganó por última ves el ${nameTournament} el ${lastWon}`}
         </Typography>
       </Box>
     </Container>
@@ -34,7 +34,7 @@ const Player = ({ name, tournament, lastWon }) => {
 
 Player.propTypes = {
   name: PropTypes.string.isRequired,
-  tournament: PropTypes.string.isRequired,
+  nameTournament: PropTypes.string.isRequired,
   lastWon: PropTypes.string.isRequired
 }
 

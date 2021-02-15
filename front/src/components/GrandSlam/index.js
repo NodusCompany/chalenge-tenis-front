@@ -18,7 +18,7 @@ const GrandSlam = () => {
   const {
     showPlayer,
     data: {
-      name, tournament, lastWon
+      name, nameTournament, lastWon
     }
   } = useSelector((state) => state.statistics.player)
 
@@ -33,7 +33,7 @@ const GrandSlam = () => {
         showPlayer && (
           <Player
             name={name}
-            tournament={tournament}
+            nameTournament={nameTournament}
             lastWon={lastWon}
           />
         )

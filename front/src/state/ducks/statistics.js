@@ -1,9 +1,7 @@
-/* eslint-disable quote-props */
-/* eslint-disable quotes */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 import { getLastWinner, getLastTimeWon } from '../../utils/apiConfig'
-import { getTournaments } from '../../utils/configQueries'
+import { getTournaments, getTournamentName } from '../../utils/configQueries'
 
 const getWinner = createAsyncThunk(
   'statistics/getWinner',
@@ -59,17 +57,17 @@ const playerDataRequest = createAsyncThunk(
     const requestOptions = {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
+      // TODO: No funciona con JSON.stringify({ player })
       body: `{ "player": "${player}" }`
     }
-
     const resp = await fetch(url, requestOptions)
-
     const { lastDayWon, lastMonthWon, lastYearWon } = await resp.json()
 
     const data = {
       id: player,
       name: player,
       tournament,
+      nameTournament: getTournamentName({ tournament }),
       lastWon: `${lastDayWon}/${lastMonthWon}/${lastYearWon}`
     }
     return { data }
