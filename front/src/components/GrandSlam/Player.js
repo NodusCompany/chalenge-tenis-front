@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import { useDispatch } from 'react-redux'
 
 import {
   Container
@@ -8,20 +10,15 @@ import {
 
 import { actions as statisticsActions } from '../../state/ducks/statistics'
 
-const GrandSlam = () => {
+const Player = ({ name, tournament, lastWon }) => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(statisticsActions.getData())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const {
-    id: idPlayer, name, tournament, lastWon
-  } = useSelector((state) => state.statistics.player)
-
   return (
     <Container>
-      {idPlayer}
       {name}
       {tournament}
       {lastWon}
@@ -29,4 +26,10 @@ const GrandSlam = () => {
   )
 }
 
-export default GrandSlam
+Player.propTypes = {
+  name: PropTypes.string.isRequired,
+  tournament: PropTypes.string.isRequired,
+  lastWon: PropTypes.string.isRequired
+}
+
+export default Player

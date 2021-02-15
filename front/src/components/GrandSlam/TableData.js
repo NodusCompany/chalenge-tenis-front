@@ -38,7 +38,7 @@ const columns = [
   }
 ]
 
-const GrandSlam = () => {
+const TableData = () => {
   const classes = useStyles()
   const dispatch = useDispatch()
   useEffect(() => {
@@ -63,22 +63,22 @@ const GrandSlam = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
-            <TableRow key={row.id}>
+          {Object.keys(data).map((id) => (
+            <TableRow key={id}>
               {
-                Object.keys(row).filter((k) => k !== 'id').map((item, index) => (
+                Object.keys(data[id]).filter((k) => k !== 'id').map((item, index) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <TableCell key={index} align="center">
                     {
-                      item !== 'maxWinner' ? row[item] : (
-                        row[item].map((player) => (
+                      item !== 'maxWinner' ? data[id][item] : (
+                        data[id][item].map((player) => (
                           // eslint-disable-next-line jsx-a11y/anchor-is-valid
                           <Link
                             key={player}
                             href="#"
                             onClick={() => (
                               dispatch(statisticsActions.playerDataRequest({
-                                tournament: row.id, player
+                                tournament: data[id].id, player
                               }))
                             )}
                           >
@@ -98,4 +98,4 @@ const GrandSlam = () => {
   )
 }
 
-export default GrandSlam
+export default TableData

@@ -74,17 +74,15 @@ const playerDataRequest = createAsyncThunk(
 const statistics = createSlice({
   name: 'statistics',
   initialState: {
-    data: [],
+    data: {},
     player: false
   },
   reducers: {},
   extraReducers: {
     [getWinner.fulfilled]: (draftState, { payload: { data } }) => {
-      // TODO: evitar info repetida
-      draftState.data.push(data)
+      draftState.data[data.id] = data
     },
     [playerDataRequest.fulfilled]: (draftState, { payload: { data } }) => {
-      // TODO: evitar info repetida
       draftState.player = data
     }
   }

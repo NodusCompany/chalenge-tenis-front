@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import Table from './Table'
+import TableData from './TableData'
 import Player from './Player'
 
 import { actions as statisticsActions } from '../../state/ducks/statistics'
@@ -14,18 +14,25 @@ const GrandSlam = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { id: idPlayer } = useSelector((state) => state.statistics.player)
+  // TODO: Mejorar formato del player en el state
+  const {
+    id: idPlayer, name, tournament, lastWon
+  } = useSelector((state) => state.statistics.player)
 
   return (
     <>
       {
         !idPlayer && (
-          <Table />
+          <TableData />
         )
       }
       {
         idPlayer && (
-          <Player />
+          <Player
+            name={name}
+            tournament={tournament}
+            lastWon={lastWon}
+          />
         )
       }
     </>
