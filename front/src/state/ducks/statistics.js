@@ -75,15 +75,19 @@ const statistics = createSlice({
   name: 'statistics',
   initialState: {
     data: {},
-    player: false
+    player: { showPlayer: false, data: {} }
   },
-  reducers: {},
+  reducers: {
+    hidePlayerData: (draftState) => {
+      draftState.player.showPlayer = false
+    }
+  },
   extraReducers: {
     [getWinner.fulfilled]: (draftState, { payload: { data } }) => {
       draftState.data[data.id] = data
     },
     [playerDataRequest.fulfilled]: (draftState, { payload: { data } }) => {
-      draftState.player = data
+      draftState.player = { showPlayer: true, data }
     }
   }
 })

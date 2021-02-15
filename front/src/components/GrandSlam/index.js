@@ -16,18 +16,21 @@ const GrandSlam = () => {
 
   // TODO: Mejorar formato del player en el state
   const {
-    id: idPlayer, name, tournament, lastWon
+    showPlayer,
+    data: {
+      name, tournament, lastWon
+    }
   } = useSelector((state) => state.statistics.player)
 
   return (
     <>
       {
-        !idPlayer && (
+        !showPlayer && (
           <TableData />
         )
       }
       {
-        idPlayer && (
+        showPlayer && (
           <Player
             name={name}
             tournament={tournament}

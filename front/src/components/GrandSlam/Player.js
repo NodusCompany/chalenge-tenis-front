@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 
 import { useDispatch } from 'react-redux'
 
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace'
 import {
-  Container
+  Container, Box, Typography, IconButton
 } from '@material-ui/core'
 
 import { actions as statisticsActions } from '../../state/ducks/statistics'
@@ -19,9 +20,14 @@ const Player = ({ name, tournament, lastWon }) => {
 
   return (
     <Container>
-      {name}
-      {tournament}
-      {lastWon}
+      <Box>
+        <IconButton onClick={() => dispatch(statisticsActions.hidePlayerData())}>
+          <KeyboardBackspaceIcon />
+        </IconButton>
+        <Typography>
+          {`${name} ganó por última ves el ${tournament} el ${lastWon}`}
+        </Typography>
+      </Box>
     </Container>
   )
 }
