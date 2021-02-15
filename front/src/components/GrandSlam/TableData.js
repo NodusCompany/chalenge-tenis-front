@@ -82,7 +82,7 @@ const TableData = () => {
                               }))
                             )}
                           >
-                            {player}
+                            {`${player} `}
                           </Link>
                         ))
                       )

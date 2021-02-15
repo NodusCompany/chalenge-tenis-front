@@ -1,3 +1,5 @@
+/* eslint-disable quote-props */
+/* eslint-disable quotes */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 import { getLastWinner, getLastTimeWon } from '../../utils/apiConfig'
@@ -24,7 +26,7 @@ const getWinner = createAsyncThunk(
       place,
       sup,
       lastChampion,
-      maxWinner: name.map((n) => `${n} `)
+      maxWinner: name.map((n) => `${n}`)
     }
     return { data }
   }
@@ -54,10 +56,13 @@ const playerDataRequest = createAsyncThunk(
   async ({ tournament, player }) => {
     const url = getLastTimeWon({ tournament })
 
-    const resp = await fetch(url, {
+    const requestOptions = {
       method: 'POST',
-      body: { player }
-    })
+      headers: { 'content-Type': 'application/json' },
+      body: `{ "player": "${player}" }`
+    }
+
+    const resp = await fetch(url, requestOptions)
 
     const { lastDayWon, lastMonthWon, lastYearWon } = await resp.json()
 

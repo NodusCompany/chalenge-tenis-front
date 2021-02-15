@@ -29,14 +29,14 @@ const Home = () => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+        <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" className={classes.title}>
+        <Typography className={classes.title}>
           {title}
         </Typography>
       </Toolbar>
-      <Tabs value={value} className={classes.tabs} onChange={handleChange}>
+      <Tabs value={value} onChange={handleChange}>
         {
           Items.map(({
             id, title: t
